@@ -25,3 +25,9 @@ For better testing you should run in a python environment on your local system
 # Issues
 - low frame rate :( ...so it's not the most amazing user experience but at least the math is there.
 - as mentioned: trinket has problems with handling relative mouse changes when the cursor is out of the trinket window
+
+# Future
+I will be uploading scans that show more of the mathematical concepts used in the script. This includes:
+ - Rotation matrix derivation (Linear algebra)
+ - Formula to prevent wall glitching (Calculus, Trig)
+ - Linear interpolation for rectangles (Quick maths)
