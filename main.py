@@ -15,7 +15,7 @@ pygame.mouse.set_visible(False)
 pygame.event.set_grab(True) # for getting relative mouse position when outside the screen
 prox = 0.1 # how close you can get to a wall
 # this is the local y value that points behind the camera are interpolated to
-hiddenY = 2**-0.5 * prox # specific for a 45 degree view pyramid
+hiddenY = prox * 1.41 # see 'Fixing glitchy walls.docx' for explanation
 
 # Colors
 WHITE = (255, 255, 255)
