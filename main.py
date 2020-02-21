@@ -61,10 +61,12 @@ class Polygon3D(ABC):
   # returns the interpolated point on the line P1 P2 where y coordinate is y
   # assumes y coordinates are different for P1 and P2
   def interpolateUsingY(self, P1, P2, y):
-    mXY = (P2[0] - P1[0]) / (P2[1] - P1[1])
+    dyFactor = 1 / (P2[1] - P1[1])
+    
+    mXY = (P2[0] - P1[0]) * dyFactor
     x = P1[0] + mXY * (y - P1[1])
     
-    mZY = (P2[2] - P1[2]) / (P2[1] - P1[1])
+    mZY = (P2[2] - P1[2]) * dyFactor
     z = P1[2] + mZY * (y - P1[1])
     
     return [x, y, z]
@@ -228,7 +230,8 @@ def drawSight():
   pygame.draw.line(screen, WHITE, (p[0]-d,p[1]+d), (p[0]+d,p[1]+d), 2)
   pygame.draw.line(screen, WHITE, (p[0]+d,p[1]+d), (p[0]+d,p[1]-d), 2)
 
-while True:
+running = True
+while running:
   
   # move position
   pygame.event.pump()
@@ -271,11 +274,16 @@ while True:
         
       t -= mouseMove[0] * senseTheta
       a += mouseMove[1] * senseAlpha
+      if a > 0.5*pi:
+        a = 0.5*pi
+      elif a < -0.5*pi:
+        a = -0.5*pi
       rotationMatrix = updateRotationMatrix(t, a)
       
     if event.type == pygame.KEYDOWN:
       if event.key == pygame.K_ESCAPE:
-        exit = True
+        running = False
+        break
     
   screen.fill(WHITE)
   
