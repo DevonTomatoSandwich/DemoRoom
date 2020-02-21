@@ -43,10 +43,11 @@ stand = [0,0,0.5] # initial eye position of the player in XYZ
 t = 0 # angle in radians from positive X axis to positive x axis anticlockwise about positive Z
 a = 0 # angle in radians from positive Z axis to positive z axis clockwise about positive x
 # derrived from the placement of the local unit vectors depending on t and a
+# see ‘Rotation matix.docx’ for explanation
 def updateRotationMatrix(t, a):
   return [
     [cos(t), sin(t), 0],
-    [-sin(t)*cos(a),  cos(t)*cos(a),  -sin(a)], 
+    [-cos(a)*sin(t), cos(a)*cos(t), -sin(a)], 
     [-sin(a)*sin(t), sin(a)*cos(t), cos(a)]
   ]
 rotationMatrix = updateRotationMatrix(t, a)
