@@ -17,7 +17,7 @@ For better testing you should run in a python environment on your local system
 - A list of polygons with points in 3D are provided in global coordinates
 - These points are translated by the position the player is standing
 - The points are then rotated depending on the angle the player is looking. This is done using matrix multiplication to adjust the points into the player's local coordinate system
-- Points behind the camera must be linearly interpolated to a point infront of the camera along the polygon edges. How far infront it should go is dependent on how close a player can get to a wall. This totally removes glitches near walls 
+- Points behind the camera must be linearly interpolated to a point infront of the camera along the polygon edges. How far infront it should go is dependent on how close a player can get to a wall and also their field of view. This totally removes glitches near walls 
 - The points can be projected onto a virtual 2d surface directly infront of the viewer. Using similar triangles you just divide by the local depth for a surface 1 unit infront.
 - Finally the points are scaled to fit on the Pygame screen
 
@@ -27,6 +27,6 @@ For better testing you should run in a python environment on your local system
 
 # Todo
 I will be uploading documents that show more of the mathematical concepts used in the script. This includes:
- - [ ] Rotation matrix derivation (Linear algebra)
- - [x] Formula to prevent wall glitching (3D Trigonometry) see 'Fixing glitchy walls'
- - [ ] Linear interpolation for rectangles (Quick maths)
+ - [x] Rotation matrix derivation (Linear algebra) see 'Rotation matrix.docx'
+ - [x] Formula to prevent wall glitching (3D Trigonometry) see 'Fixing glitchy walls.docs'
+ - [ ] Linear interpolation for points on a polygon (Quick maths)
