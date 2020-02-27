@@ -121,7 +121,7 @@ class Triangle3D(Polygon3D):
       ]
       rotatedPoints.append( self.mmult(rotationMatrix, translatedPoint) )
     
-    # interpolate any points behind y <= 0
+    # interpolate any points behind y <= 0. See 'Interpolating Polygons.docx' for explanation
     behindCameraCount = 0
     interpolatedPoints = []
     for p in rotatedPoints:
