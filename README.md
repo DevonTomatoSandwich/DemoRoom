@@ -29,4 +29,4 @@ For better testing you should run in a python environment on your local system
 I will be uploading documents that show more of the mathematical concepts used in the script. This includes:
  - [x] Rotation matrix derivation (Linear algebra) see 'Rotation matrix.docx'
  - [x] Formula to prevent wall glitching (3D Trigonometry) see 'Fixing glitchy walls.docs'
- - [ ] Linear interpolation for points on a polygon (Quick maths)
+ - [x] Linear interpolation for points on a polygon (Quick maths) see 'Interpolating Polygons.docs'
