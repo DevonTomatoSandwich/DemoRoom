@@ -15,7 +15,7 @@ pygame.mouse.set_visible(False)
 pygame.event.set_grab(True) # for getting relative mouse position when outside the screen
 prox = 0.1 # how close you can get to a wall
 # this is the local y value that points behind the camera are interpolated to
-hiddenY = prox * 0.577 # see 'Fixing glitchy walls.docx' for explanation
+gamma = prox * 0.577 # see 'Fixing glitchy walls.docx' for explanation
 
 # Colors
 WHITE = (255, 255, 255)
@@ -59,18 +59,18 @@ class Polygon3D(ABC):
     self.points = points # real world coordinates
     self.color = color
     
-  # returns the interpolated point on the line P1 P2 where y coordinate is y
-  # assumes y coordinates are different for P1 and P2
-  def interpolateUsingY(self, P1, P2, y):
-    dyFactor = 1 / (P2[1] - P1[1])
+  # returns the interpolated point on the line q1 q2 where y coordinate is gamma
+  # assumes y coordinates are different for q1 and q2
+  def interpolateUsingY(self, q1, q2):
+    dyFactor = 1 / (q2[1] - q1[1])
     
-    mXY = (P2[0] - P1[0]) * dyFactor
-    x = P1[0] + mXY * (y - P1[1])
+    mXY = (q2[0] - q1[0]) * dyFactor
+    ix = q1[0] + mXY * (gamma - q1[1])
     
-    mZY = (P2[2] - P1[2]) * dyFactor
-    z = P1[2] + mZY * (y - P1[1])
+    mZY = (q2[2] - q1[2]) * dyFactor
+    iz = q1[2] + mZY * (gamma - q1[1])
     
-    return [x, y, z]
+    return [ix, gamma, iz]
   
   # matrix multiplication of a 3x3 matrix with a 3x1 vector to return a 3x1 vector
   def mmult(self, matrix, vector):
@@ -141,8 +141,8 @@ class Triangle3D(Polygon3D):
             P2 = p
           else:
             P3 = p
-      I2 = self.interpolateUsingY(P1, P2, hiddenY)
-      I3 = self.interpolateUsingY(P1, P3, hiddenY)
+      I2 = self.interpolateUsingY(P1, P2)
+      I3 = self.interpolateUsingY(P1, P3)
       interpolatedPoints = [I2, P2, P3, I3]
     elif behindCameraCount == 2:
       P1 = []
@@ -156,8 +156,8 @@ class Triangle3D(Polygon3D):
             P2 = p
           else:
             P3 = p
-      I2 = self.interpolateUsingY(P1, P2, hiddenY)
-      I3 = self.interpolateUsingY(P1, P3, hiddenY)
+      I2 = self.interpolateUsingY(P1, P2)
+      I3 = self.interpolateUsingY(P1, P3)
       interpolatedPoints = [I2, P1, I3]
     else:
       return
