@@ -2,8 +2,8 @@
 A Pygame where you can walk around in a 3D room in first person.
 
 # Run
-The code can be copied to [trinket](https://trinket.io/library/trinkets/create?lang=pygame)
-But trinket has problems with handling relative mouse changes when the cursor is out of the trinket window.
+You can run a basic demo in [repl](https://repl.it/@billybud/Demo-Room) but repl is a bit glitchy.
+The code can be copied to [trinket](https://trinket.io/library/trinkets/create?lang=pygame) which is less glitchy but both of these online tools have problems with handling relative mouse changes when the cursor is out of the trinket window.
 For better testing you should run in a python environment on your local system
 - Press run to start 
 - You may need to click inside the pygame window
