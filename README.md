@@ -13,7 +13,7 @@ For the most up to date react code
 
 A published demo will soon on my website soon.
  
-You can also run a the old python pygame demo in [repl](https://repl.it/@billybud/Demo-Room) but repl is a bit glitchy. It has problems with handling relative mouse changes when the cursor is out of the trinket window. For better testing you should run in a python environment on your local system
+You can also run the old python pygame demo in [repl](https://repl.it/@billybud/Demo-Room) but repl is a bit glitchy. It has problems with handling relative mouse changes when the cursor is out of the trinket window. For better testing you should run in a python environment on your local system
 
 # Play instructions
 - Move the player with wsad
