@@ -6,7 +6,7 @@ Walk around a 3D room in first person. Uses typescript/react (originally a pygam
 
 For the most up to date react code
 1. Click [this codesandbox](https://codesandbox.io/s/demo-room-shsie?file=/src/polygons.txt) to open the code
-2. Opening in a new window (see below)
+2. Open in a new window (see below)
 ![](https://github.com/DevonTomatoSandwich/DemoRoom/blob/master/github_images/readme_2run.png)
 
 3. Click picture to start
