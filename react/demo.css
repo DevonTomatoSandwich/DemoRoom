@@ -1,0 +1,16 @@
+html {
+	font-family: sans-serif;
+}
+
+#tracker {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	background-color: white;
+}
+
+.main {
+	width: 700px;
+  background: white;
+	margin: 0 auto;
+}
