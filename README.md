@@ -5,13 +5,9 @@ Walk around a 3D room in first person. Uses typescript/react (originally a pygam
 # Run
 
 For the most up to date react code
-1. Click [this codesandbox](https://codesandbox.io/s/demo-room-shsie?file=/src/polygons.txt) to open the code
-2. Open in a new window (see below)
-![](https://github.com/DevonTomatoSandwich/DemoRoom/blob/master/github_images/readme_2run.png)
+1. Click [this codesandbox](https://codesandbox.io/s/demo-room-shsie?file=/src/polygons.txt) to open the codesandbox
+2. In "browser pane" on the right, click picture to start
 
-3. Click picture to start
-
-A published demo will soon on my website soon.
  
 You can also run the old python pygame demo in [repl](https://repl.it/@billybud/Demo-Room) but repl is a bit glitchy. It has problems with handling relative mouse changes when the cursor is out of the trinket window. For better testing you should run in a python environment on your local system
 
@@ -28,18 +24,13 @@ You can also run the old python pygame demo in [repl](https://repl.it/@billybud/
 - The points can be projected onto a virtual 2d surface directly infront of the viewer. Using similar triangles you just divide by the local depth for a surface 1 unit infront.
 - Finally the points are scaled to fit onto the screen
 
-# Coding todos
- - [ ] remove garbage code
- - [ ] convert js to typescript
- - [ ] there are also many minor todos mentioned in the code
- - [ ] update 'Fixing glitchy walls.docs' to include different canvas sizes
- - [ ] publish on website
+
 
 # Explanation todos
-I will be uploading documents that show more of the mathematical concepts used in the script. This includes:
+I ~~will be uploading~~ have uploaded documents that show more of the mathematical concepts used in the script. These include:
  - [x] Rotation matrix derivation (Linear algebra) see 'Rotation matrix.docx'
  - [x] Formula to prevent wall glitching (3D Trigonometry) see 'Fixing glitchy walls.docs'
- - [x] Linear interpolation for points on a polygon (Quick maths) see 'Interpolating Polygons.docs'
+ - [x] Linear interpolation for points on a polygon (Quick mafs) see 'Interpolating Polygons.docs'
  
  # Future Ideas
   - [ ] textures
@@ -47,3 +38,7 @@ I will be uploading documents that show more of the mathematical concepts used i
   - [ ] furniture
   - [ ] jumping
   - [ ] better collision detection
+
+ - [ ] convert js to typescript
+ - [ ] there are also minor todos mentioned in the code
+ - [ ] update 'Fixing glitchy walls.docs' to include different canvas sizes
